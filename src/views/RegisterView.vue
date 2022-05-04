@@ -63,6 +63,10 @@
             {{ errors.confirmPassword }}
           </div>
         </div>
+        <div class="form-group">
+          You have an
+          <router-link to="/login">Account</router-link>
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
       <div class="col-4 mx-auto mt-5" v-if="loading" role="status">
@@ -97,12 +101,12 @@ export default {
           this.loading = true;
           const response = await axios.post(request.api("register"), this.user);
           console.log(response);
+          this.$router.push({ name: "login" });
         } catch (error) {
           console.log(error);
           this.errors = error.response.data.errors;
         }
         this.loading = false;
-        this.$router.push({ name: "login" });
       } else {
         this.errors = {
           confirmPassword: "Password is not match",
