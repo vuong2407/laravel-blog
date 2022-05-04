@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <form
-        class="col-4 mx-auto mt-5"
+        class="col-8 mx-auto mt-5"
         @submit.prevent="createUser()"
         v-if="loading == false"
       >

@@ -3,7 +3,7 @@
     <div class="row">
       <form
         v-if="loading == false"
-        class="col-4 mx-auto mt-5"
+        class="col-8 mx-auto mt-5"
         @submit.prevent="login()"
       >
         <h2>Login</h2>
